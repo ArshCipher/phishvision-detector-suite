@@ -1,0 +1,17 @@
+pandas==2.2.2
+scikit-learn==1.5.1
+xgboost==2.1.1
+requests==2.32.3
+urllib3==2.2.3
+flask==3.0.3
+beautifulsoup4==4.12.3
+python-whois==0.9.4
+tldextract==5.1.2
+pyOpenSSL==24.2.1
+matplotlib==3.9.2
+seaborn==0.13.2
+streamlit==1.32.0
+packaging<24
+numpy<2
+tqdm
+sqlite3

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ultimate Phishing Detector</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f9; }
+        h1 { color: #333; }
+        .form-container { max-width: 600px; margin: auto; }
+        input[type="text"] { width: 70%; padding: 10px; margin-right: 10px; }
+        input[type="submit"] { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 5px; }
+        .phishing { background: #ffcccc; color: #cc0000; }
+        .legitimate { background: #ccffcc; color: #006600; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Ultimate Phishing Detector</h1>
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter URL (e.g., https://google.com)" value="{{ url or '' }}">
+            <input type="submit" value="Check">
+        </form>
+        {% if result %}
+        <div class="result {% if result.label == 'Phishing' %}phishing{% else %}legitimate{% endif %}">
+            <p><strong>URL:</strong> {{ url }}</p>
+            <p><strong>Result:</strong> {{ result.label }} (Phishing Probability: {{ result.probability|round(2) }})</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
